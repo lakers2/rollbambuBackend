@@ -7,10 +7,9 @@ from init_db import init_db
 
 app = FastAPI(title=settings.PROJECT_NAME)
 
-# 添加CORS中间件
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # 假设您的前端运行在3000端口
+    allow_origins=["*"],  # 允许所有来源，仅用于测试
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
